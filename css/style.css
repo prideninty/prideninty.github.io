@@ -1,0 +1,184 @@
+body::-webkit-scrollbar {  
+    display: none; /* 这将完全隐藏滚动条 */  
+    /* 或者 */  
+    width: 0; /* 这将设置滚动条的宽度为0，但它可能不会在所有浏览器中起作用 */  
+}
+body.loading * {  
+  opacity: 0; 
+  /* 或者使用 opacity: 0; 和 pointer-events: none; 来保持布局但不可见和不可交互 */  
+}  
+  
+/* 当动画结束时显示网页其他部分 */  
+body.loaded * {  
+  opacity: 1; 
+  /* 如果之前使用了 opacity 和 pointer-events，则重置它们 */  
+}
+body{
+	background-image: url("../img/background.svg");
+	background-size: cover;
+}
+#container{
+		width:60%;
+		margin:95vh auto;	
+	}
+	h1 {  
+		font-family: "黑体";  
+		font-size: 2vw;  
+		text-align: center;
+		color: #fff;
+	}
+	h2{
+		font-family: "楷体";
+		font-size:1.25vw;
+		text-align: center;
+		z-index: 1;
+		color: #fff;
+	}
+	h3{
+		font-family: "楷体";
+		font-size:1.2vw;
+		text-align: center; 
+		z-index: 1;
+		color: #fff;
+	}
+	.content p{
+		font-family: "宋体";
+		font-size: 1.2vw;
+		color: #fff;
+		line-height: 1.5;
+	}
+	.lay1{
+		width: 100%;
+		display: flex;
+	}
+	.lay1 .left-column{
+		height: 500%;
+		width: 60%;
+		
+	}
+	.lay1 .right-column p{
+		color: #fff;
+		font-size: 1.2vw;
+		font-family: "宋体";
+		text-align: justify;
+		padding: 1vw 1vh;
+		margin-top:12vh;
+	}
+	table {  
+		text-align: center;
+	    width: 100%;  
+	    border-collapse: collapse;    
+	}  
+	  
+	th, td {    
+	    border: 1px solid #fff;  
+	    vertical-align: middle; 
+		color: #fff;
+	}  
+	  
+	/* 表头样式 */ 
+	.thead{
+		margin: auto;
+		width:60%;
+		align-items: center;
+	}
+	.thead p{  
+		font-family: "黑体";
+	    font-size: 1.0vw;
+	    text-align: center;
+		font-weight: bold;
+		color: #fff;
+	}  
+	tbody tr:nth-child(1) td:nth-child(n){
+		background-color: ghostwhite;
+		color: black;
+		font-weight: bold;
+		
+	} 
+	/* 第二三列的2行开始（不包括表头）背景色为cadetblue */  
+	tbody tr:nth-child(n+2) td:nth-child(2),  
+	tbody tr:nth-child(n+2) td:nth-child(3) {   
+	    color: #fff; /* 如果需要设置文字颜色 */  
+	}  
+	  
+	/* 第一列的第二行以后的行悬停效果 */  
+	tbody tr:nth-child(n+2) td:first-child:hover {  
+	    background-color: lightblue; /* 悬停时背景色 */ 
+	    cursor: pointer; /* 鼠标悬停时变为手形图标 */  
+		color: royalblue
+	}
+	.chart-container {  
+    position: relative; /* 或者 absolute/fixed，取决于您的具体布局 */  
+    height: 70vh; /* 确保容器有足够的高度来包含图表 */  
+	width: 100%;
+	}  
+	.chart-container .overlapping-div { 
+		position: absolute; /* 堆叠图表 */ 
+		height: 70vh; /* 确保容器有足够的高度来包含图表 */
+		width: 100%;
+		transition: 1s;
+	} 
+	#box{
+		display: flex;  
+		justify-content: center; /* 水平居中 */  
+		align-items: center; /* 垂直居中（如果容器高度固定）*/  
+		flex-wrap: wrap; /* 如果需要换行 */   
+		height: 5vh;
+	}
+	#box #b1{
+		background-color: indianred;
+	}
+	#box #b2{
+		background-color: aquamarine;
+	}
+	#box #b3{
+		background-color: palegreen;
+	}
+	#box #b4{
+		background-color: lightskyblue;
+	}
+	#box .chart-button {
+		cursor: pointer;
+		width: 15%;
+		height: 5vh;
+		line-height: 5vh;
+		float: left;
+		margin: 0 2vw;
+		color: aliceblue;
+		font-weight: bold;
+		text-align: center;
+		border-radius: 5%;
+	}
+	#box #b1:hover,#box #b2:hover,#box #b3:hover,#box #b4:hover {  
+	    /* 悬停样式 */  
+		color: black;
+	}
+#signal{
+	margin-left: 6vw;
+	margin-bottom: 1vh;
+	font-family: "黑体";
+	color: #fff;
+	animation: blinker 1s linear infinite;
+}
+#signal2{
+	float: inline-end;
+	margin-right: 20vw;
+	margin-bottom: 1vh;
+	font-family: "黑体";
+	font-weight: 100;
+	font-size: 0.8vw;
+	color: #fff;
+	animation: blinker 1s linear infinite;
+}
+@keyframes blinker {  
+  50% { opacity: 0; } /* 闪烁效果，50% 时间时完全透明 */  
+}  
+table img{
+	width: 100%;
+	filter: contrast(200%) brightness(1.5);
+	opacity: 1;
+}
+.quote{
+	font-size: 0.8vw;
+	color:whitesmoke
+}
